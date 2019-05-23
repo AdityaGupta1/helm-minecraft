@@ -23,10 +23,3 @@ Instructions on how to run a Minecraft server using Kubernetes.
     - Use `kubectl exec -i <pod name> rcon-cli` to access the server console
 ![](console.png)
 7. Enjoy your **epic** Minecraft server
-
-## TODO
-
-- Figure out how to access the EBS volume and interact with saved data
-- Add instructions for making a shorter IP
-- Command to get pod name so that it doesn't need to be manually provided each time
-- Find out whether the default LoadBalancer is the best, and if not, which one is the best
