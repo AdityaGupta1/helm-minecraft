@@ -9,10 +9,13 @@ Instructions on how to run a Minecraft server using Kubernetes.
 
 ## Instructions
 
+1. Create an EKS cluster
+    - Example command: `eksctl create cluster --name minecraft --nodes 2 --region us-west-2 --ssh-access --ssh-public-key=aditya --zones us-west-2b,us-west-2c`
+        - This command will create a cluster with two nodes, spread equally among `us-west-2b` and `us-west-2c`.
 1. Decide whether you want to use an EBS or EFS volume
 2. Obtain access to an EBS or EFS volume, depending on which one you decided to use
 2. Edit the last line of `.helmignore` to the type of volume you are not using (e.g. `templates/ebs-*.yaml` if you are using EFS)
-3. Obtain access to a EKS cluster (instructions at http://arun-gupta.github.io/add-iam-user-to-eks/)
+3. Obtain access to the EKS cluster (instructions at http://arun-gupta.github.io/add-iam-user-to-eks/)
 4. Install Helm on the EKS cluster (follow instructions at http://arun-gupta.github.io/helm-eks/) 	
 5. Download the Helm chart (https://github.com/AdityaGupta1/charts/tree/master/stable/minecraft)
     - This chart has a few important differences from the one at https://github.com/helm/charts/tree/master/stable/minecraft:
